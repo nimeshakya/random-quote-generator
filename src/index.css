@@ -1,13 +1,94 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+.quote-container {
+    background-color: #f8f8f8;
+    width: 40%;
+    height: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quote-div > h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+    /* color: red; */
+}
+
+.quote-div > h1 > span {
+    font-size: 1em;
+    margin-right: 25px;
+}
+
+.quote-div > h3 {
+    text-align: right;
+    /* color: red; */
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin: 25px 25px 0 0;
+}
+
+.controls-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.social-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-container li {
+    display: block;
+    margin: 0 10px;
+    /* background-color: red; */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.social-link {
+    font-size: 1.5rem;
+    color: #f8f8f8;
+}
+
+.social-link:hover {
+    cursor: pointer;
+}
+
+.controls-div > button {
+    /* background-color: red; */
+    border: none;
+    box-shadow: none;
+    color: #f8f8f8;
+    width: 100px;
+    height: 40px;
+    font-size: 1rem;
+    border-radius: 5px;
 }
