@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const QuoteContainer = ({
     color,
@@ -47,19 +47,24 @@ const QuoteContainer = ({
                 </div>
             ) : (
                 <div className='quote-div'>
-                    <h1 style={{ color: `#${color}` }}>
+                    <h1 key={color} style={{ color: `#${color}` }}>
                         <span>
                             <i className='fas fa-quote-left'></i>
                         </span>
                         {quote.quote}
                     </h1>
-                    <h3 style={{ color: `#${color}` }}>-{quote.author}</h3>
+                    <h3 key={color} style={{ color: `#${color}` }}>
+                        -{quote.author}
+                    </h3>
                 </div>
             )}
 
             <div className='controls-div'>
                 <ul className='social-container'>
-                    <li style={{ backgroundColor: `#${color}` }}>
+                    <li
+                        style={{ backgroundColor: `#${color}` }}
+                        title='Tweet on Twitter'
+                    >
                         <a
                             // link to post to twitter
                             href={
@@ -74,7 +79,10 @@ const QuoteContainer = ({
                             <i className='fab fa-twitter'></i>
                         </a>
                     </li>
-                    <li style={{ backgroundColor: `#${color}` }}>
+                    <li
+                        style={{ backgroundColor: `#${color}` }}
+                        title='Post on Tumblr'
+                    >
                         <a
                             // link to post to twitter
                             href={

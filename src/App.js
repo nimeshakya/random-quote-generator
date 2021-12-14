@@ -44,15 +44,12 @@ const App = () => {
         fetchQuotes();
     }, []);
 
-    console.log(quotes);
-
     useEffect(() => {
         setQuote(quotes[Math.floor(Math.random() * quotes.length)]);
     }, [quotes]);
 
-    console.log(quote);
     return (
-        <main style={{ backgroundColor: `#${color}` }}>
+        <main key={color} style={{ backgroundColor: `#${color}` }}>
             <QuoteContainer
                 color={color}
                 setColor={setColor}
