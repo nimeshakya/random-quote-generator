@@ -25,6 +25,9 @@ main {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    max-height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .quote-div-loading {
@@ -129,4 +132,20 @@ main {
 .controls-div > button:hover {
     cursor: pointer;
     opacity: 0.8;
+}
+
+@media screen and (max-width: 1050px) {
+    .quote-container {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .quote-container {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .quote-container {
+        width: 100%;
+    }
 }

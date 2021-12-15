@@ -46,16 +46,14 @@ const QuoteContainer = ({
                     </h1>
                 </div>
             ) : (
-                <div className='quote-div'>
-                    <h1 key={color} style={{ color: `#${color}` }}>
+                <div key={color} className='quote-div'>
+                    <h1 style={{ color: `#${color}` }}>
                         <span>
                             <i className='fas fa-quote-left'></i>
                         </span>
                         {quote.quote}
                     </h1>
-                    <h3 key={color} style={{ color: `#${color}` }}>
-                        -{quote.author}
-                    </h3>
+                    <h3 style={{ color: `#${color}` }}>-{quote.author}</h3>
                 </div>
             )}
 
@@ -68,12 +66,14 @@ const QuoteContainer = ({
                         <a
                             // link to post to twitter
                             href={
-                                quote !== undefined &&
-                                `https://www.twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${encodeURIComponent(
-                                    `"${quote.quote}"\n- ${quote.author}`
-                                )}`
+                                quote !== undefined
+                                    ? `https://www.twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=${encodeURIComponent(
+                                          `"${quote.quote}"\n- ${quote.author}`
+                                      )}`
+                                    : '#'
                             }
                             target='_blank'
+                            rel='noreferrer'
                             className='social-link'
                         >
                             <i className='fab fa-twitter'></i>
@@ -86,14 +86,16 @@ const QuoteContainer = ({
                         <a
                             // link to post to twitter
                             href={
-                                quote !== undefined &&
-                                `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=${encodeURIComponent(
-                                    quote.author
-                                )}&content=${encodeURIComponent(
-                                    quote.quote
-                                )}&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`
+                                quote !== undefined
+                                    ? `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=${encodeURIComponent(
+                                          quote.author
+                                      )}&content=${encodeURIComponent(
+                                          quote.quote
+                                      )}&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`
+                                    : '#'
                             }
                             target='_blank'
+                            rel='noreferrer'
                             className='social-link'
                         >
                             <i className='fab fa-tumblr'></i>
